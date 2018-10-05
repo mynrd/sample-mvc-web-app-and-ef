@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebAppSample.Models.UserModel>
+@{
+    ViewBag.Title = "User Create";
+}
+
+<h2>@ViewBag.Title</h2>
+<table class="table table-bordered table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th width="150">
+                @Html.ActionLink("Create", "Create", "User", new { @class = "btn btn-info" })
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Username</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "User", new { id = item.Id }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Delete", "Delete", "User", new { id = item.Id }, new { @class = "btn btn-info" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
